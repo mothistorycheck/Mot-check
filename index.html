@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOT Check</title>
+    <style>/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+#tool {
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#tool label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+#tool input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#tool button {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#tool button:hover {
+    background: #555;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+</style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>MOT Check</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="home">
+            <h2>Welcome to MOT Check</h2>
+            <p>MOT Check is a convenient tool for checking the MOT history of your vehicle. Enter your registration number below to get started.</p>
+        </section>
+
+        <!-- MOT Checking Tool -->
+        <section id="tool">
+            <h2>MOT History Check Tool</h2>
+            <form id="mot-check-form">
+                <label for="registration">Enter Registration Number:</label>
+                <input type="text" id="registration" name="registration" placeholder="e.g., AB12 CDE" required>
+                <button type="submit">Check MOT History</button>
+            </form>
+        </section>
+
+        <!-- Additional Content -->
+        <section id="about">
+            <h2>About MOT Check</h2>
+            <p>The MOT test checks that your vehicle meets road safety and environmental standards. With our MOT Check tool, you can easily access your vehicle's MOT history, including test dates, results, and advisory notices.</p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 MOT Check. All rights reserved.</p>
+    </footer>
+
+    <script>document.getElementById("mot-check-form").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent form submission
+
+    const registrationNumber = document.getElementById("registration").value.trim();
+    if (registrationNumber) {
+        // Redirect to MOT history site with registration number
+        window.location.href = `https://motcheck.org?registration=${encodeURIComponent(registrationNumber)}`;
+    } else {
+        alert("Please enter a valid registration number.");
+    }
+});
+</script>
+</body>
+</html>
